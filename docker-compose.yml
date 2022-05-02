@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  mongo-db:
+    image: mongo
+    restart: always
+    ports:
+      - '27017:27017'
+    environment:
+      MONGODB_DATABASE: nest-course
+  db:
+    image: postgres:13-alpine
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=pass123
+  test-db:
+    image: postgres:13-alpine
+    restart: always
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_PASSWORD=pass123
