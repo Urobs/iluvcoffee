@@ -4,6 +4,17 @@
 
 ## Installation
 
+you should add env in your applicaion folder first, create a .env file under the root dir, for example:
+
+```
+DATABASE_USER=postgres
+DATABASE_PASSWORD=pass123
+DATABASE_NAME=postgres
+DATABASE_PORT=5432
+DATABASE_HOST=localhost
+API_KEY=123456789
+```
+
 ```bash
 $ npm install
 ```
