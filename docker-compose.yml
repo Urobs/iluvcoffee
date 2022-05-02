@@ -8,6 +8,13 @@ services:
       - '27017:27017'
     environment:
       MONGODB_DATABASE: nest-course
+  test-mongo-db:
+    image: mongo
+    restart: always
+    ports:
+      - '27018:27017'
+    environment:
+      MONGODB_DATABASE: nest-course
   db:
     image: postgres:13-alpine
     restart: always

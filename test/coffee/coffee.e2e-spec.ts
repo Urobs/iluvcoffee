@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CreateCoffeeDto } from '../../src/coffees/dto/create-coffee.dto';
 import * as request from 'supertest';
 import { CoffeesModule } from '../../src/coffees/coffees.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 describe('[Feature] Coffees - /coffees', () => {
   let app: INestApplication;
@@ -27,6 +28,7 @@ describe('[Feature] Coffees - /coffees', () => {
           autoLoadEntities: true,
           synchronize: true,
         }),
+        MongooseModule.forRoot('mongodb://localhost:27018/nest-course'),
       ],
     }).compile();
     app = moduleFixture.createNestApplication();
